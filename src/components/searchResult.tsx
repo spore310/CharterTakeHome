@@ -2,7 +2,7 @@ import React, {FC, useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import {hydrateList} from '../redux/movieSlice';
-import { ResponseAxios } from './inputField';
+import { ResponseAxios } from './InputField/inputField';
 import ListItem from './SearchItem';
 import style from './searchResult.module.css';
 const SearchResult:FC = () =>{
@@ -10,9 +10,9 @@ const SearchResult:FC = () =>{
 
     const myState = (state: RootState) => state.movie;
 
-    const State = useSelector(myState);
+    const state = useSelector(myState);
 
-    const [myList, getList] = useState<ResponseAxios[]>([]);
+ /*    const [myList, getList] = useState<ResponseAxios[]>([]);
 
      useEffect(()=>{
         let temp = [...State.movieList];
@@ -25,20 +25,23 @@ const SearchResult:FC = () =>{
             temp = temp.filter((ele:ResponseAxios)=>ele.title.includes(State.keyword))
         }
         getList(temp);
-     },[State.genre,State.keyword]);
+     },[State.genre,State.keyword]); */
+
      useEffect(()=>{
         
         dispatch(hydrateList())
       
  },[])
-     useEffect(()=>{
+
+    /*  useEffect(()=>{
         
             
             getList(State.movieList)
-     },[State.movieList]);
+     },[State.movieList]); */
+
     return(<div className={style.container}>
         <ul className={style.list}>
-            {myList.length>0?myList.map((ele:ResponseAxios, index:number)=><li key={index}><ListItem id={ele.id} title={ele.title} genres={ele.genres}/></li>):<div className={style.noResults}>No Results</div>}
+            {state.searchList.length>0?state.searchList.map((ele:ResponseAxios, index:number)=><li key={index}><ListItem id={ele.id} title={ele.title} genres={ele.genres}/></li>):<div className={style.noResults}>No Results</div>}
         </ul>
     </div>)
 } 

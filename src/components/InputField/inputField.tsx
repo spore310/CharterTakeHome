@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hydrateList, filterList, filterTitle } from '../redux/movieSlice';
-import { RootState, AppDispatch } from '../redux/store';
+import { hydrateList, filterList, filterTitle } from '../../redux/movieSlice';
+import { RootState, AppDispatch } from '../../redux/store';
 
 import style from './inputField.module.css';
 export interface ResponseAxios {
-    id: number;
+    id: string;
     title: string;
-    genres: [string]
+    genres: string[]
 }
 export const InputField: FC<any> = () => {
     const [input, setInput] = useState<string>("");
@@ -45,12 +45,12 @@ export const InputField: FC<any> = () => {
         setInput(e.target.value);
     };
 
-    return (<div className={style.wrapper}>
+    return (<div className={style.wrapper} data-testid="inputfield-wrapper">
        
        
         <div className={style.inputWrapper}>
             
-            <input type='text' value={input} onChange={handleChange} />
+            <input type='text' value={input} onChange={handleChange} data-testid="inputfield-input"/>
            
             <div className={style.selectorWrapper}>
                 <button className={style.genreButton} onClick={()=>toogleAuto(prev=>!prev)}>Genre</button>

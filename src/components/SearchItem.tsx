@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ResponseAxios} from './inputField';
+import {ResponseAxios} from './InputField/inputField';
 import style from './SearchItem.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { InputField } from './components/inputField';
+import { InputField } from './components/InputField/inputField';
 import List from './components/searchResult'
 import InfoCard from './components/InfoCard';
 import style from './app.module.css';
