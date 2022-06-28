@@ -46,12 +46,12 @@
     position:absolute;
     background: greenyellow;
     left: 58px;
-    top: -4px;
+    top: -1px;
     padding:4px;
     font-weight: bold;
     border:none;
     border-radius:25px;
-    font-size: 10px;
+    font-size:8px;
 }
 .genreCancel:hover{
     transform: scale(.9);
@@ -70,6 +70,7 @@
 
 .genreButton:hover{
     transform: scale(.9);
+    font-weight: bold;
 }
 .genreButton:active{
     transform: scale(.7)

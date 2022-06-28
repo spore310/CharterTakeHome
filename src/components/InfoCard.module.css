@@ -7,8 +7,24 @@
    width:fit-content;
    position: relative;
    top:70px;
+   right:45px;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   gap:8px;
+   outline:3px solid black;
+   padding:12px;
+   color:azure;
+   background:black;
+   border-radius: 25px;
+   text-align: center;
 }
+.title{
+    font-weight: bold;
+    font-size:20px;
 
+}
 .container:hover{
     cursor:pointer;
+    top:65px;
 }

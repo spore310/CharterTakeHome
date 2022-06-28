@@ -11,7 +11,7 @@ const InfoCard:FC =() =>{
     const movie =  State.infoSelect;
     return(<>
     {movie?.title?<div className={style.container}>
-          <h2>{movie.title}</h2>
+          <div className={style.title}>{movie.title}</div>
           <img className={style.image}
     src={process.env.PUBLIC_URL + `/movieHeroImages/${movie.id}.jpeg`}
     alt='not found lol'
@@ -20,7 +20,7 @@ const InfoCard:FC =() =>{
       currentTarget.src=process.env.PUBLIC_URL +"movieHeroImages/defaultImage.jpeg";
     }}
   />
-      <p>ID: {movie.id}</p>
+      <div className={style.id}>ID: {movie.id}</div>
       </div>:null}
     </>)
 }

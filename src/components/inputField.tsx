@@ -62,7 +62,7 @@ export const InputField: FC<any> = () => {
                         }}>{ele}</div>}
                         )}
                 </div>
-            {State.genre && <button className={style.genreCancel} onClick={()=>{dispatch(filterList(''))}}>Clear {State.genre}</button>}
+            {State.genre && <button className={style.genreCancel} onClick={()=>{dispatch(filterList(''))}}>Clear Genre</button>}
             </div>
         </div>
     </div>)

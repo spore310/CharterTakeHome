@@ -11,10 +11,10 @@ const ListItem:FC<ResponseAxios> = ({id, title}) => {
 
 return(<div className={style.container} onClick={()=>dispatch(selectMovie(id))}>
     <div className={style.cardImage}><img 
-  src={process.env.PUBLIC_URL + `/movieHeroImages/${id}.jpeg`}
+  src={process.env.PUBLIC_URL + `/moviePosterImages/${id}.jpeg`}
   onError={({ currentTarget }) => {
     currentTarget.onerror = null; // prevents looping
-    currentTarget.src=process.env.PUBLIC_URL +"movieHeroImages/defaultImage.jpeg";
+    currentTarget.src=process.env.PUBLIC_URL +"moviePosterImages/defaultImage.jpeg";
   }}
 /></div>
     <div className={style.cardWrapper}>{title}</div>
