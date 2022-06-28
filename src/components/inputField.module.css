@@ -40,6 +40,7 @@
 }
 .autoItem:hover{
     cursor:pointer;
+    background: lightgrey;
 }
 .genreCancel{
     position:absolute;

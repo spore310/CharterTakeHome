@@ -8,6 +8,10 @@
     background: lightgrey;
     padding:4px;
 }
+.container:hover{
+    cursor:pointer;
+    outline: 3px solid red;
+}
 .cardWrapper{
     display:flex;
     flex-direction: column;
