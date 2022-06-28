@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import {hydrateList} from '../redux/movieSlice';
 import { ResponseAxios } from './inputField';
+import ListItem from './SearchItem';
 import style from './searchResult.module.css';
 const SearchResult:FC = () =>{
     const dispatch = useDispatch<AppDispatch>();
@@ -33,8 +34,8 @@ const SearchResult:FC = () =>{
             getList(State.movieList)
      },[]);
     return(<div className={style.container}>
-        <ul>
-            {myList.length>0 && myList.map((ele:ResponseAxios, index:number)=><li key={index}>{ele.title}</li>)}
+        <ul className={style.list}>
+            {myList.length>0?myList.map((ele:ResponseAxios, index:number)=><li key={index}><ListItem id={ele.id} title={ele.title} genres={ele.genres}/></li>):<div className={style.noResults}>No Results</div>}
         </ul>
     </div>)
 } 

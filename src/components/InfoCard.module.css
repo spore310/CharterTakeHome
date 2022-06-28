@@ -1,0 +1,10 @@
+.image{
+    width:220px;
+    height: 220px;
+}
+.container{
+   height:fit-content;
+   width:fit-content;
+   position: relative;
+   top:70px;
+}

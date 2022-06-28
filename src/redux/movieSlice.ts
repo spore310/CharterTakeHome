@@ -17,6 +17,7 @@ interface initVal {
     searchList:ResponseAxios[];
     keyword: string;
     genre:string;
+    infoSelect:ResponseAxios;
 }
 const initialState:initVal = { 
     movieList:[],
@@ -24,7 +25,8 @@ const initialState:initVal = {
     loading:false,
     searchList:[],
     keyword:'',
-    genre:''
+    genre:'',
+    infoSelect:{id:0,title:'', genres:['']}
 } 
 const movie = createSlice({
     name:'movie',
@@ -36,6 +38,10 @@ const movie = createSlice({
         filterTitle:(state,action)=>{
             state.keyword = action.payload;
           
+        },
+        selectMovie:(state,action)=>{
+            let temp = state.movieList.filter((ele)=>ele.id === action.payload)[0];
+            state.infoSelect = temp;
         }
     },
     extraReducers:{
@@ -59,5 +65,5 @@ const movie = createSlice({
     }
 })
 
-export const { filterList, filterTitle } = movie.actions;
+export const { filterList, filterTitle, selectMovie } = movie.actions;
 export default movie.reducer;
