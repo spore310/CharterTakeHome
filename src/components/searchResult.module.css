@@ -1,0 +1,21 @@
+.container{
+    height: fit-content;
+    width:500px;
+}
+.list{
+    width:400px;
+    list-style: none;
+    position: relative;
+    top:35px;
+    margin:4px;
+    height:600px;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+
+.noResults{
+    position:relative;
+    top:5px;
+    font-weight: bold;
+    font-size: 18px;
+}

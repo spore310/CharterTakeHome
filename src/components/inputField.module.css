@@ -1,0 +1,76 @@
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: black;
+    width:100%;
+}
+.wrapper > * {
+    margin:5px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+}
+
+.selectorWrapper {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+
+.auto{
+    position: absolute;
+    height:5px;
+    width:250px;
+    top:22px;
+    right:0px;
+}
+
+.autoItem{
+    width:100%;
+    height:fit-content;
+    margin:2px;
+    padding:2px;
+    background: gray;
+    text-align: center;
+}
+.autoItem:hover{
+    cursor:pointer;
+}
+.genreCancel{
+    position:absolute;
+    background: greenyellow;
+    left: 58px;
+    top: -4px;
+    padding:4px;
+    font-weight: bold;
+    border:none;
+    border-radius:25px;
+    font-size: 10px;
+}
+.genreCancel:hover{
+    transform: scale(.9);
+}
+.genreCancel:active{
+    transform: scale(.7)
+}
+.genreButton {
+    padding:4px;
+    background: greenyellow;
+    font-weight: bold;
+    border:none;
+    border-radius:25px;
+    transition: all .5 easing ease-in-out;
+}
+
+.genreButton:hover{
+    transform: scale(.9);
+}
+.genreButton:active{
+    transform: scale(.7)
+}
+
