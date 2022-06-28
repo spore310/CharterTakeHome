@@ -26,7 +26,7 @@ export const InputField: FC<any> = () => {
 
     useEffect(()=>{
         dispatch(filterTitle(input));
-        console.log('input', input);
+       /*  console.log('input', input);
         let temp = [...State.movieList];
         if(State.genre){
         temp = temp.filter((ele, index, arr)=>{
@@ -36,7 +36,7 @@ export const InputField: FC<any> = () => {
         if(State.keyword){
             temp = temp.filter((ele)=>ele.title.includes(State.keyword))
         }
-        console.log('state', temp)
+        console.log('state', temp) */
     },[State.genre,State.keyword, input])
 
 
