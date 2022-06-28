@@ -22,9 +22,7 @@ export const InputField: FC<any> = () => {
     const State = useSelector(myState);
 
 
-    useEffect(() => {
-        dispatch(hydrateList())
-    }, []);
+    
 
     useEffect(()=>{
         dispatch(filterTitle(input));

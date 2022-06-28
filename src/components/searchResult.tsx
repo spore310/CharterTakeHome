@@ -26,12 +26,16 @@ const SearchResult:FC = () =>{
         }
         getList(temp);
      },[State.genre,State.keyword]);
-
      useEffect(()=>{
         
-            dispatch(hydrateList())
+        dispatch(hydrateList())
+      
+ },[])
+     useEffect(()=>{
+        
+            
             getList(State.movieList)
-     },[]);
+     },[State.movieList]);
     return(<div className={style.container}>
         <ul className={style.list}>
             {myList.length>0?myList.map((ele:ResponseAxios, index:number)=><li key={index}><ListItem id={ele.id} title={ele.title} genres={ele.genres}/></li>):<div className={style.noResults}>No Results</div>}
