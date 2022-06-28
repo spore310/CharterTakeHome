@@ -1,5 +1,4 @@
-import React, {FC, useEffect} from 'react';
-import { isPropertyAccessOrQualifiedName } from 'typescript';
+import React, {FC} from 'react';
 import {ResponseAxios} from './inputField';
 import style from './SearchItem.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +8,7 @@ import { selectMovie } from '../redux/movieSlice';
 const ListItem:FC<ResponseAxios> = ({id, title}) => {
   const dispatch = useDispatch<AppDispatch>();
 
-    const myState = (state: RootState) => state.movie;
 
-    const State = useSelector(myState);
 return(<div className={style.container} onClick={()=>dispatch(selectMovie(id))}>
     <div className={style.cardImage}><img 
   src={process.env.PUBLIC_URL + `/movieHeroImages/${id}.jpeg`}

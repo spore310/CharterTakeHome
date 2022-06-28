@@ -1,4 +1,3 @@
-import { listenerCancelled } from '@reduxjs/toolkit/dist/listenerMiddleware/exceptions';
 import React, {FC, useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
