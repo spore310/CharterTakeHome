@@ -55,8 +55,8 @@ export const InputField: FC<any> = () => {
             <div className={style.selectorWrapper}>
                 <button className={style.genreButton} onClick={()=>toogleAuto(prev=>!prev)}>Genre</button>
                 <div className={style.auto}>
-                    {showAuto && State.genres && State.genres.map((ele)=>{
-                        return <div className={style.autoItem} onClick={()=>{
+                    {showAuto && State.genres && State.genres.map((ele,index)=>{
+                        return <div key={index}className={style.autoItem} onClick={()=>{
                             dispatch(filterList(ele))
                             toogleAuto(false);
                         }}>{ele}</div>}
